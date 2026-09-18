@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Iago Queiroz | Engenharia de Dados</title>
+  <meta name="description" content="Iago Queiroz, estudante de Ciência da Computação na UFMA. Experiência em robótica competitiva (FRC e FTC) e foco em Engenharia de Dados com Python e SQL.">
+  <meta name="theme-color" content="#F1E4C8">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Iago Queiroz | Engenharia de Dados">
+  <meta property="og:description" content="Estudante de Ciência da Computação buscando vaga júnior em Engenharia de Dados.">
+
+  <!-- Favicon embutido (SVG): nenhum arquivo extra, nenhum 404 de /favicon.ico -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20x='6'%20y='6'%20width='56'%20height='56'%20fill='%23181713'/%3E%3Crect%20x='2'%20y='2'%20width='56'%20height='56'%20fill='%23F1E4C8'%20stroke='%23181713'%20stroke-width='4'/%3E%3Cpath%20d='M16%2016h8v28h-8z'%20fill='%23181713'/%3E%3Ccircle%20cx='40'%20cy='30'%20r='11'%20fill='none'%20stroke='%23181713'%20stroke-width='8'/%3E%3Cpath%20d='M42%2036l8%2010'%20stroke='%23769B45'%20stroke-width='7'/%3E%3C/svg%3E">
+
+  <!--
+    Tipografia (apenas arquivos de fonte; nenhuma biblioteca ou framework):
+    Alfa Slab One = tipo de madeira / carimbo (títulos)
+    Zilla Slab    = texto corrido editorial
+    IBM Plex Mono = anotações técnicas, etiquetas e rótulos
+    Caveat        = escrita à mão (logo e marcações de revisão)
+    Se o Google Fonts falhar, o CSS cai para fontes do sistema equivalentes.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@700&family=IBM+Plex+Mono:wght@400;600&family=Zilla+Slab:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    Marca o documento como "com JS" antes da primeira pintura. Os estados iniciais
+    invisíveis (.reveal) só valem dentro de .js, então o conteúdo continua visível:
+      - com JS desativado: esta linha nem roda;
+      - se o main.js não carregar: o onerror da tag <script> no fim do <body> desfaz a classe.
+  -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!--
+    Filtro de "xilogravura": deforma levemente as bordas, como tinta em madeira entalhada.
+    A regra .xilo fica AQUI (e não no style.css) de propósito: url(#xilo) precisa apontar
+    para este documento; num CSS externo alguns navegadores procurariam o #xilo no arquivo CSS.
+  -->
+  <style>.xilo { filter: url(#xilo); }</style>
+</head>
+
+<body id="topo">
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="xilo" x="-5%" y="-10%" width="110%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="ruido"/>
+      <feDisplacementMap in="SourceGraphic" in2="ruido" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ==========================================================
+       CABEÇALHO — tema único: sem botões de tema, terminal ou mangá
+       ========================================================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#topo" aria-label="Iago Queiroz — voltar ao início">Iago Queiroz</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <nav class="menu" id="menu" aria-label="Navegação principal">
+        <ul class="menu__list">
+          <li><a class="menu__link" href="#sobre">Sobre</a></li>
+          <li><a class="menu__link" href="#projetos">Projetos</a></li>
+          <li><a class="menu__link" href="#stack">Stack</a></li>
+          <li><a class="menu__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ==========================================================
+         HERO
+         ========================================================== -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero__grid">
+
+        <div class="hero__text">
+          <p class="kicker">São Luís, MA | UFMA</p>
+
+          <!-- .stamp = efeito de carimbo (CSS puro, roda uma vez ao carregar) -->
+          <h1 class="hero__name" id="hero-titulo">
+            <span class="hero__word stamp xilo">Iago</span>
+            <span class="hero__word hero__word--alt stamp xilo" style="--d: .2s">Queiroz</span>
+          </h1>
+
+          <p class="hero__sub">
+            Estudante de Ciência da Computação com experiência em robótica competitiva.
+            Construo projetos de Engenharia de Dados com Python e SQL.
+          </p>
+
+          <p class="hero__meta">UFMA | São Luís, MA | FRC e FTC</p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#projetos">Ver projetos <span aria-hidden="true">→</span></a>
+            <a class="btn btn--paper" href="#sobre">Ver perfil <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <figure class="hero__figure">
+          <img class="hero__img" src="img/treecko.png" width="800" height="1000"
+              alt="Treecko, mascote deste portfólio">
+
+            <span class="seal">Buscando vaga de Engenharia de Dados Júnior</span>
+            <figcaption class="hero__caption">Mascote do portfólio</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SOBRE
+         ========================================================== -->
+    <section id="sobre" class="section section--dark-paper">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker">Sobre</p>
+          <p class="section__page" aria-hidden="true">Folha 01 / 04</p>
+          <h2 class="section__title xilo reveal reveal--stamp">Perfil</h2>
+        </header>
+
+        <div class="about">
+          <div class="sheet reveal">
+            <p>
+              Estudo Ciência da Computação na UFMA, em São Luís. Em FRC e FTC, atuei com
+              programação, coordenação técnica e scouting: coletar dados das partidas e
+              transformá-los em decisão de estratégia. Hoje aplico essa mesma lógica a dados
+              de sensores e pipelines, e busco minha primeira vaga como Engenheiro de Dados Júnior.
+            </p>
+          </div>
+
+          <aside class="ficha reveal" style="--d: .1s" aria-label="Ficha resumida">
+            <dl class="ficha__list">
+              <div><dt>Local</dt><dd>São Luís, MA</dd></div>
+              <div><dt>Formação</dt><dd>Ciência da Computação, UFMA</dd></div>
+              <div><dt>Origem</dt><dd>Robótica competitiva (FRC e FTC)</dd></div>
+              <div><dt>Foco</dt><dd>Engenharia de Dados</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PROJETOS
+         PortMind Intelligence (destaque), PortMind AI (complementar) e robótica competitiva.
+         ========================================================== -->
+    <section id="projetos" class="section section--grid">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker">Projetos</p>
+          <p class="section__page" aria-hidden="true">Folha 02 / 04</p>
+          <h2 class="section__title xilo reveal reveal--stamp">Trabalhos</h2>
+        </header>
+
+        <div class="projects">
+
+          <article class="card card--feature reveal">
+            <div class="card__main">
+              <p class="card__top">
+                <span class="card__num">01</span>
+                <span class="card__ref">Em destaque</span>
+              </p>
+              <h3 class="card__title">PortMind Intelligence</h3>
+              <p class="card__desc">Pipeline de dados para monitoramento de dutos do Porto do Itaqui. Simula sensores de pressão com EPANET/WNTR, gera telemetria contínua por API, detecta anomalias com base no histórico das leituras e transforma cada detecção em ocorrência e alerta, sempre com confirmação humana.</p>
+              <p class="card__desc"><strong>Detalhe técnico:</strong> Python, FastAPI, PostgreSQL, EPANET/WNTR. O motor de análise nunca lê o estado da simulação, que fica separado apenas para avaliar os resultados.</p>
+              <p class="card__desc"><strong>Contexto:</strong> Desenvolvido em equipe (ARVEX) para um desafio do Porto do Itaqui. Minha parte: [sua contribuição específica].</p>
+            </div>
+
+            <div class="card__side">
+              <ul class="tags" aria-label="Temas">
+                <li class="tag">Python</li>
+                <li class="tag">FastAPI</li>
+                <li class="tag">Telemetria</li>
+                <li class="tag">Detecção de anomalias</li>
+              </ul>
+              <p class="card__status"><span class="tag tag--go">Em destaque</span></p>
+              <p class="card__status">Repositório: [link]</p>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--d: .08s">
+            <p class="card__top">
+              <span class="card__num">02</span>
+              <span class="card__ref">Projeto complementar</span>
+            </p>
+            <h3 class="card__title">PortMind AI</h3>
+            <p class="card__desc">Interface web do mesmo projeto: dashboard, mapa, incidentes, alertas e auditoria para o centro de comando operacional. Frontend em React e TypeScript, com backend em Fastify e Prisma em evolução.</p>
+            <p class="card__desc"><strong>Contexto:</strong> Minha parte: [sua contribuição específica].</p>
+            <ul class="tags" aria-label="Temas">
+              <li class="tag">React</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Fastify</li>
+              <li class="tag">Prisma</li>
+            </ul>
+            <p class="card__status">Repositório: [link]</p>
+          </article>
+
+          <article class="card reveal" style="--d: .16s">
+            <p class="card__top">
+              <span class="card__num">03</span>
+              <span class="card__ref">Origem | FRC e FTC</span>
+            </p>
+            <h3 class="card__title">Robótica competitiva</h3>
+            <p class="card__desc">
+              Experiência em equipes de FRC e FTC, integrando hardware, software e pessoas.
+              No scouting, coletávamos e analisávamos dados das partidas para decidir estratégia
+              de aliança e de jogo, sempre com o relógio correndo. [um resultado concreto, por
+              exemplo: a decisão que os dados mudaram numa partida]
+            </p>
+            <ul class="tags" aria-label="Temas">
+              <li class="tag">FRC</li>
+              <li class="tag">FTC</li>
+              <li class="tag">Scouting</li>
+              <li class="tag">Estratégia</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         STACK — etiquetas impressas em vez de botões neon
+         ========================================================== -->
+    <section id="stack" class="section section--dark-paper">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker">Stack</p>
+          <p class="section__page" aria-hidden="true">Folha 03 / 04</p>
+          <h2 class="section__title xilo reveal reveal--stamp">Ferramentas</h2>
+        </header>
+
+        <ul class="labels reveal">
+          <li class="label">Python</li>
+          <li class="label">SQL</li>
+          <li class="label">EPANET/WNTR</li>
+          <li class="label">FastAPI</li>
+          <li class="label">PostgreSQL</li>
+          <li class="label">Git</li>
+          <li class="label">GitHub</li>
+          <li class="label">JavaScript</li>
+          <li class="label">React</li>
+          <li class="label">TypeScript</li>
+          <li class="label">HTML</li>
+          <li class="label">CSS</li>
+          <li class="label">Java</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CONTATO
+         ========================================================== -->
+    <section id="contato" class="section section--ink">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker">Contato</p>
+          <p class="section__page" aria-hidden="true">Folha 04 / 04</p>
+          <h2 class="section__title section__title--call xilo reveal reveal--stamp">
+            Vamos conversar?
+          </h2>
+        </header>
+
+        <ul class="contact reveal">
+          <li>
+            <a class="contact__link" href="mailto:[seu e-mail real]">
+              <span class="contact__label">E-mail</span>
+              <span class="contact__value">[seu e-mail real]</span>
+              <span class="contact__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact__link" href="https://github.com/[seu-usuario]" target="_blank" rel="noopener noreferrer">
+              <span class="contact__label">GitHub</span>
+              <span class="contact__value">github.com/[seu-usuario]</span>
+              <span class="contact__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact__link" href="https://www.linkedin.com/in/[seu-usuario]" target="_blank" rel="noopener noreferrer">
+              <span class="contact__label">LinkedIn</span>
+              <span class="contact__value">linkedin.com/in/[seu-usuario]</span>
+              <span class="contact__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Só aparece com JS (o main.js remove o atributo hidden): sem JS, o mailto acima resolve.
+             O endereço copiado vem do href do link mailto acima. -->
+        <p class="contact__copy">
+          <button class="btn btn--on-ink" type="button" data-copy hidden>Copiar e-mail</button>
+          <span class="contact__feedback" role="status" aria-live="polite"></span>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 Iago Queiroz</p>
+      <a class="site-footer__top" href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- onerror: se este arquivo falhar ao carregar, desfaz o .js e nada fica invisível -->
+  <script src="main.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</body>
+</html>
