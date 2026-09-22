@@ -41,7 +41,57 @@
   }
 
   /* ------------------------------------------------------------------------
-     2. MENU MOBILE
+     2. VOLTAR AO TOPO
+     O botão usa rolagem suave para o topo sem empurrar o histórico para um hash
+     ou criar um teleporte instantâneo.
+     ------------------------------------------------------------------------ */
+  document.querySelectorAll('[data-scroll-top]').forEach(function (trigger) {
+    trigger.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      if (window.history && window.history.replaceState) {
+        var baseUrl = window.location.pathname + window.location.search;
+        window.history.replaceState(null, '', baseUrl);
+      }
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: reducedMotion ? 'auto' : 'smooth'
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      var targetId = link.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
+      var sectionHead = target && target.classList.contains('section')
+        ? target.querySelector('.section__head')
+        : null;
+
+      if (!sectionHead) return;
+
+      event.preventDefault();
+
+      var header = document.querySelector('.site-header');
+      var headerHeight = header ? header.getBoundingClientRect().height : 68;
+      var targetTop = sectionHead.getBoundingClientRect().top + window.pageYOffset - headerHeight - 24;
+
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, '', '#' + targetId);
+      }
+
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        left: 0,
+        behavior: reducedMotion ? 'auto' : 'smooth'
+      });
+    });
+  });
+
+  /* ------------------------------------------------------------------------
+     3. MENU MOBILE
      Painel simples que desce do cabeçalho (não é modal, então não prende o foco).
      Fecha ao: escolher um link, apertar Esc, clicar fora, o foco sair do cabeçalho
      ou voltar à largura desktop.
@@ -99,7 +149,7 @@
   }
 
   /* ------------------------------------------------------------------------
-     3. COPIAR E-MAIL
+     4. COPIAR E-MAIL
      Melhoria progressiva: o botão nasce com `hidden` no HTML e só aparece se o
      navegador tiver a Clipboard API. Sem ela (ou sem JS), o link mailto resolve.
      ------------------------------------------------------------------------ */

@@ -38,22 +38,9 @@
   -->
   <script>document.documentElement.classList.add('js');</script>
 
-  <!--
-    Filtro de "xilogravura": deforma levemente as bordas, como tinta em madeira entalhada.
-    A regra .xilo fica AQUI (e não no style.css) de propósito: url(#xilo) precisa apontar
-    para este documento; num CSS externo alguns navegadores procurariam o #xilo no arquivo CSS.
-  -->
-  <style>.xilo { filter: url(#xilo); }</style>
 </head>
 
 <body id="topo">
-  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
-    <filter id="xilo" x="-5%" y="-10%" width="110%" height="120%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="ruido"/>
-      <feDisplacementMap in="SourceGraphic" in2="ruido" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-  </svg>
-
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <!-- ==========================================================
@@ -61,7 +48,11 @@
        ========================================================== -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="logo" href="#topo" aria-label="Iago Queiroz — voltar ao início">Iago Queiroz</a>
+      <a class="brand-logo" href="#" data-scroll-top aria-label="Voltar ao início">
+        <span class="brand-main">IQ<span class="cursor">_</span></span>
+        <span class="brand-separator" aria-hidden="true"></span>
+        <span class="brand-tag">// DATA</span>
+      </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
         <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -70,6 +61,7 @@
       <nav class="menu" id="menu" aria-label="Navegação principal">
         <ul class="menu__list">
           <li><a class="menu__link" href="#sobre">Sobre</a></li>
+          <li><a class="menu__link" href="#experiencia">Experiência</a></li>
           <li><a class="menu__link" href="#projetos">Projetos</a></li>
           <li><a class="menu__link" href="#stack">Stack</a></li>
           <li><a class="menu__link" href="#contato">Contato</a></li>
@@ -91,8 +83,8 @@
 
           <!-- .stamp = efeito de carimbo (CSS puro, roda uma vez ao carregar) -->
           <h1 class="hero__name" id="hero-titulo">
-            <span class="hero__word stamp xilo">Iago</span>
-            <span class="hero__word hero__word--alt stamp xilo" style="--d: .2s">Queiroz</span>
+            <span class="hero__word stamp">Iago</span>
+            <span class="hero__word hero__word--alt stamp" style="--d: .2s">Queiroz</span>
           </h1>
 
           <p class="hero__sub">
@@ -113,55 +105,84 @@
               alt="Treecko, mascote deste portfólio">
 
             <span class="seal">Buscando vaga de Engenharia de Dados Júnior</span>
-            <figcaption class="hero__caption">Mascote do portfólio</figcaption>
         </figure>
 
       </div>
     </section>
 
     <!-- ==========================================================
-         SOBRE
+         PERFIL
          ========================================================== -->
     <section id="sobre" class="section section--dark-paper">
       <div class="container">
         <header class="section__head">
           <p class="kicker">Sobre</p>
-          <p class="section__page" aria-hidden="true">Folha 01 / 04</p>
-          <h2 class="section__title xilo reveal reveal--stamp">Perfil</h2>
+          <p class="section__page" aria-hidden="true">Folha 01 / 05</p>
+          <h2 class="section__title reveal reveal--stamp">Perfil</h2>
         </header>
 
-        <div class="about">
-          <div class="sheet reveal">
-            <p>
-              Estudo Ciência da Computação na UFMA, em São Luís. Em FRC e FTC, atuei com
-              programação, coordenação técnica e scouting: coletar dados das partidas e
-              transformá-los em decisão de estratégia. Hoje aplico essa mesma lógica a dados
-              de sensores e pipelines, e busco minha primeira vaga como Engenheiro de Dados Júnior.
-            </p>
-          </div>
+        <article class="perfil-card reveal">
+          <p>Estudo Ciência da Computação na UFMA, em São Luís. Em FRC e FTC, atuei com programação, coordenação técnica e scouting: coletar dados das partidas e transformá-los em decisão de estratégia. Hoje aplico essa mesma lógica a dados de sensores e pipelines, e busco minha primeira vaga como Engenheiro de Dados Júnior.</p>
 
-          <aside class="ficha reveal" style="--d: .1s" aria-label="Ficha resumida">
-            <dl class="ficha__list">
-              <div><dt>Local</dt><dd>São Luís, MA</dd></div>
-              <div><dt>Formação</dt><dd>Ciência da Computação, UFMA</dd></div>
-              <div><dt>Origem</dt><dd>Robótica competitiva (FRC e FTC)</dd></div>
-              <div><dt>Foco</dt><dd>Engenharia de Dados</dd></div>
-            </dl>
-          </aside>
+          <div class="perfil-metadata">
+            <div><label>Local</label><span>São Luís, MA</span></div>
+            <div><label>Formação</label><span>Ciência da Computação, UFMA</span></div>
+            <div><label>Origem</label><span>Robótica competitiva (FRC e FTC)</span></div>
+            <div><label>Foco</label><span>Engenharia de Dados</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         EXPERIÊNCIA
+         ========================================================== -->
+    <section id="experiencia" class="section section--grid">
+      <div class="container">
+        <header class="section__head">
+          <p class="kicker">Experiência</p>
+          <p class="section__page" aria-hidden="true">Folha 02 / 05</p>
+          <h2 class="section__title reveal reveal--stamp">Experiência</h2>
+        </header>
+
+        <div class="experience reveal">
+          <article class="experience__item">
+            <div class="experience__meta">
+              <span class="experience__role">Estagiário — Gestor de Projetos de TI e Técnico de Equipe</span>
+              <span class="experience__period">Julho 2024 – Julho 2025</span>
+            </div>
+            <div class="experience__header">
+              <h3 class="experience__title">FRC Colossus</h3>
+              <p class="experience__institution">SESI (Escola SESI Anexo)</p>
+            </div>
+            <p class="experience__desc">Estágio formal de um ano no SESI, atuando como gestor de projetos de TI e técnico da equipe Colossus, uma das equipes pioneiras de FRC no Maranhão. Responsável pela gestão de projetos e chefia de engenharia da equipe: mentoria e treinamento dos integrantes, gestão de projetos sociais, patrocínios e financeiro, além de atuação prática em maquinário, elétrica, modelagem, usinagem, montagem e testagem dos robôs. Em paralelo, monitoria técnica das equipes de FTC e FRC na Escola SESI Anexo, orientando documentação, modelagem e montagem de protótipos ao longo da temporada.</p>
+          </article>
+
+          <article class="experience__item" style="--d: .08s">
+            <div class="experience__meta">
+              <span class="experience__role">Engenheiro-Chefe e Desenvolvedor</span>
+              <span class="experience__period">2022 – 2023</span>
+            </div>
+            <div class="experience__header">
+              <h3 class="experience__title">FTC Falcons</h3>
+              <p class="experience__institution">Co-fundador</p>
+            </div>
+            <p class="experience__award"><span class="tag tag--go">Inspire Award — primeiro ano de competição</span></p>
+            <p class="experience__desc">Co-fundador da Falcons, primeira equipe de FTC do Maranhão, vencedora do Inspire Award já no primeiro ano de competição. Como Engenheiro-Chefe e Desenvolvedor, responsável pelo ciclo de vida completo do robô: concepção, design, modelagem, impressão 3D, montagem, programação e testagem. Atuou também como piloto em competição e liderou reuniões com patrocinadores, fornecedores e autoridades, além de contribuir diretamente nas apresentações aos juízes.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================
          PROJETOS
-         PortMind Intelligence (destaque), PortMind AI (complementar) e robótica competitiva.
          ========================================================== -->
     <section id="projetos" class="section section--grid">
       <div class="container">
         <header class="section__head">
           <p class="kicker">Projetos</p>
-          <p class="section__page" aria-hidden="true">Folha 02 / 04</p>
-          <h2 class="section__title xilo reveal reveal--stamp">Trabalhos</h2>
+          <p class="section__page" aria-hidden="true">Folha 03 / 05</p>
+          <h2 class="section__title reveal reveal--stamp">Trabalhos</h2>
         </header>
 
         <div class="projects">
@@ -172,10 +193,9 @@
                 <span class="card__num">01</span>
                 <span class="card__ref">Em destaque</span>
               </p>
-              <h3 class="card__title">PortMind Intelligence</h3>
+              <h3 class="card__title">PortMind — Pipeline de Dados</h3>
               <p class="card__desc">Pipeline de dados para monitoramento de dutos do Porto do Itaqui. Simula sensores de pressão com EPANET/WNTR, gera telemetria contínua por API, detecta anomalias com base no histórico das leituras e transforma cada detecção em ocorrência e alerta, sempre com confirmação humana.</p>
-              <p class="card__desc"><strong>Detalhe técnico:</strong> Python, FastAPI, PostgreSQL, EPANET/WNTR. O motor de análise nunca lê o estado da simulação, que fica separado apenas para avaliar os resultados.</p>
-              <p class="card__desc"><strong>Contexto:</strong> Desenvolvido em equipe (ARVEX) para um desafio do Porto do Itaqui. Minha parte: [sua contribuição específica].</p>
+              <p class="card__desc"><strong>Contexto:</strong> Desenvolvimento do Digital Twin da rede de dutos, com base no modelo EPANET, mantendo a mesma estrutura de nós, tubulações e junções da adaptação paralela em FESTO/FluidSIM para evitar divergência entre os modelos.</p>
             </div>
 
             <div class="card__side">
@@ -186,7 +206,6 @@
                 <li class="tag">Detecção de anomalias</li>
               </ul>
               <p class="card__status"><span class="tag tag--go">Em destaque</span></p>
-              <p class="card__status">Repositório: [link]</p>
             </div>
           </article>
 
@@ -195,36 +214,16 @@
               <span class="card__num">02</span>
               <span class="card__ref">Projeto complementar</span>
             </p>
-            <h3 class="card__title">PortMind AI</h3>
+            <h3 class="card__title">PortMind — Painel de Controle</h3>
             <p class="card__desc">Interface web do mesmo projeto: dashboard, mapa, incidentes, alertas e auditoria para o centro de comando operacional. Frontend em React e TypeScript, com backend em Fastify e Prisma em evolução.</p>
-            <p class="card__desc"><strong>Contexto:</strong> Minha parte: [sua contribuição específica].</p>
+            <p class="card__desc"><strong>Contexto:</strong> Atuação na arquitetura e nas decisões de projeto do painel, da definição do fluxo de dados até a visualização.</p>
             <ul class="tags" aria-label="Temas">
               <li class="tag">React</li>
               <li class="tag">TypeScript</li>
               <li class="tag">Fastify</li>
               <li class="tag">Prisma</li>
             </ul>
-            <p class="card__status">Repositório: [link]</p>
-          </article>
-
-          <article class="card reveal" style="--d: .16s">
-            <p class="card__top">
-              <span class="card__num">03</span>
-              <span class="card__ref">Origem | FRC e FTC</span>
-            </p>
-            <h3 class="card__title">Robótica competitiva</h3>
-            <p class="card__desc">
-              Experiência em equipes de FRC e FTC, integrando hardware, software e pessoas.
-              No scouting, coletávamos e analisávamos dados das partidas para decidir estratégia
-              de aliança e de jogo, sempre com o relógio correndo. [um resultado concreto, por
-              exemplo: a decisão que os dados mudaram numa partida]
-            </p>
-            <ul class="tags" aria-label="Temas">
-              <li class="tag">FRC</li>
-              <li class="tag">FTC</li>
-              <li class="tag">Scouting</li>
-              <li class="tag">Estratégia</li>
-            </ul>
+            <p class="card__status"><a class="btn btn--paper" href="https://portmind-ai.vercel.app/" target="_blank" rel="noopener">VER PROJETO →</a></p>
           </article>
 
         </div>
@@ -238,25 +237,36 @@
       <div class="container">
         <header class="section__head">
           <p class="kicker">Stack</p>
-          <p class="section__page" aria-hidden="true">Folha 03 / 04</p>
-          <h2 class="section__title xilo reveal reveal--stamp">Ferramentas</h2>
+          <p class="section__page" aria-hidden="true">Folha 04 / 05</p>
+          <h2 class="section__title reveal reveal--stamp">Ferramentas</h2>
         </header>
 
-        <ul class="labels reveal">
-          <li class="label">Python</li>
-          <li class="label">SQL</li>
-          <li class="label">EPANET/WNTR</li>
-          <li class="label">FastAPI</li>
-          <li class="label">PostgreSQL</li>
-          <li class="label">Git</li>
-          <li class="label">GitHub</li>
-          <li class="label">JavaScript</li>
-          <li class="label">React</li>
-          <li class="label">TypeScript</li>
-          <li class="label">HTML</li>
-          <li class="label">CSS</li>
-          <li class="label">Java</li>
-        </ul>
+        <div class="stack-groups reveal">
+          <div class="stack-group stack-group--primary">
+            <h3 class="stack-group__title">Stack principal</h3>
+            <div class="labels">
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/python/1A1A1A" alt=""><span>PYTHON</span></button><span class="tool-snippet">Usado em: PortMind</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M6 8c0-3 20-3 20 0v16c0 3-20 3-20 0V8Zm4 0v16c3 1 9 1 12 0V8c-3 1-9 1-12 0Zm2 5h8v3h-8v-3Zm0 6h6v3h-6v-3Z"/></svg><span>SQL</span></button><span class="tool-snippet">Usado em: PortMind</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/git/1A1A1A" alt=""><span>GIT</span></button><span class="tool-snippet">Usado em: PortMind e robótica</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/postgresql/1A1A1A" alt=""><span>POSTGRESQL</span></button><span class="tool-snippet">Usado em: PortMind</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/fastapi/1A1A1A" alt=""><span>FASTAPI</span></button><span class="tool-snippet">Usado em: pipeline PortMind</span></div>
+            </div>
+          </div>
+
+          <div class="stack-group stack-group--secondary">
+            <h3 class="stack-group__title">usado em projetos específicos</h3>
+            <div class="labels">
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/react/1A1A1A" alt=""><span>REACT</span></button><span class="tool-snippet">Usado em: painel PortMind</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/typescript/1A1A1A" alt=""><span>TYPESCRIPT</span></button><span class="tool-snippet">Usado em: painel PortMind</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/javascript/1A1A1A" alt=""><span>JAVASCRIPT</span></button><span class="tool-snippet">Usado em: interações do portfólio</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/html5/1A1A1A" alt=""><span>HTML</span></button><span class="tool-snippet">Usado em: painel e portfólio</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg><span>CSS</span></button><span class="tool-snippet">Usado em: painel e portfólio</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M4 16c4-7 7-7 12 0s8 7 12 0v5c-4 7-7 7-12 0s-8-7-12 0v-5Z"/></svg><span>EPANET/WNTR</span></button><span class="tool-snippet">Usado em: simulação hidráulica</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0 0-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0 0 .07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0 0 .553.457 3.393.639"/></svg><span>JAVA</span></button><span class="tool-snippet">Usado em: robótica FTC</span></div>
+              <div class="tool-wrapper"><button class="tool-badge" type="button"><img class="tool-logo" src="https://cdn.simpleicons.org/github/1A1A1A" alt=""><span>GITHUB</span></button><span class="tool-snippet">Usado em: versionamento</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -267,8 +277,8 @@
       <div class="container">
         <header class="section__head">
           <p class="kicker">Contato</p>
-          <p class="section__page" aria-hidden="true">Folha 04 / 04</p>
-          <h2 class="section__title section__title--call xilo reveal reveal--stamp">
+          <p class="section__page" aria-hidden="true">Folha 05 / 05</p>
+          <h2 class="section__title section__title--call reveal reveal--stamp">
             Vamos conversar?
           </h2>
         </header>
@@ -311,7 +321,7 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <p>© 2026 Iago Queiroz</p>
-      <a class="site-footer__top" href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+      <button class="site-footer__top" type="button" data-scroll-top>Voltar ao topo <span aria-hidden="true">↑</span></button>
     </div>
   </footer>
 
