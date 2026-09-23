@@ -959,7 +959,7 @@ a {
 
 .experience__media {
   display: block;
-  height: clamp(210px, 24vw, 300px);
+  height: clamp(240px, 28vw, 360px);
   margin: 0 0 24px;
   overflow: hidden;
   border: 7px double var(--tinta);
