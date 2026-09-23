@@ -977,7 +977,7 @@ a {
   filter: saturate(.88) contrast(1.06);
 }
 
-.experience__media--falcons { height: clamp(230px, 26vw, 320px); }
+.experience__media--falcons { height: clamp(280px, 32vw, 420px); }
 .experience__media--falcons img { object-position: center bottom; }
 .experience__media--colossus img { object-position: center center; }
 
