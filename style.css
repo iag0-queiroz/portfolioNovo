@@ -266,6 +266,12 @@ a {
 
 .tag--go { background: var(--verde-acao); }
 
+.tag--concept {
+  border-style: dashed;
+  background: transparent;
+  color: var(--vermelho-alerta);
+}
+
 
 /* ==========================================================================
    05. CABEÇALHO E MENU
@@ -718,8 +724,9 @@ a {
    ========================================================================== */
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(24px, 3vw, 36px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: clamp(24px, 3vw, 36px);
+  row-gap: clamp(52px, 6vw, 72px);
   align-items: start;
 }
 
@@ -733,7 +740,6 @@ a {
   display: flex;
   flex-direction: column;
   height: auto;
-  min-height: 100%;
   overflow: hidden;
   padding: clamp(22px, 2.6vw, 32px);
   border: var(--borda);
@@ -741,6 +747,8 @@ a {
   box-shadow: var(--off) var(--off) 0 var(--tinta);
   transition: transform .12s ease-out, box-shadow .12s ease-out;
 }
+
+.projects > .card { grid-column: span 3; }
 
 .card:hover {
   transform: translate(var(--off), var(--off));
@@ -776,12 +784,60 @@ a {
   border-width: 4px;
 }
 
+.projects > .card--concept {
+  grid-column: span 2;
+  width: auto;
+  background: var(--papel) var(--hachura);
+  border-style: dashed;
+  box-shadow: 3px 3px 0 var(--tinta);
+}
+
+.projects > .card--ongoing { grid-column: span 4; }
+
+.card--concept .card__title {
+  color: var(--vermelho-alerta);
+}
+
+.card--concept .card__desc {
+  max-width: 62ch;
+}
+
 .card__main,
 .card__side {
   min-width: 0;
 }
 
 .card__main { flex: 1 1 60%; }
+
+.card__media {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  margin: 0 0 22px;
+  border: 2px solid var(--tinta);
+  outline: 1px dashed var(--tinta);
+  outline-offset: -9px;
+  background: var(--papel) var(--hachura);
+  color: var(--vermelho-alerta);
+  font-family: var(--fonte-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.card--feature .card__media {
+  min-height: 126px;
+}
 
 .card__side {
   display: flex;
@@ -900,6 +956,29 @@ a {
   background: var(--papel) var(--hachura);
   box-shadow: 6px 6px 0 var(--tinta);
 }
+
+.experience__media {
+  display: block;
+  height: clamp(210px, 24vw, 300px);
+  margin: 0 0 24px;
+  overflow: hidden;
+  border: 7px double var(--tinta);
+  outline: 2px dashed var(--tinta);
+  outline-offset: -13px;
+  background: var(--papel-escuro) var(--hachura);
+}
+
+.experience__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  object-fit: cover;
+  filter: saturate(.88) contrast(1.06);
+}
+
+.experience__media--falcons img { object-position: center 70%; }
+.experience__media--colossus img { object-position: center center; }
 
 .experience__item::before {
   content: "";
@@ -1344,6 +1423,13 @@ a {
   .hero__grid,
   .about,
   .projects { grid-template-columns: minmax(0, 1fr); }
+
+  .projects > .card,
+  .projects > .card--ongoing,
+  .projects > .card--concept {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
 
   /* 36px de folga: a moldura é girada (caixa maior que o elemento) e tem sombra de 8px */
   .hero__figure {

@@ -147,18 +147,9 @@
 
         <div class="experience reveal">
           <article class="experience__item">
-            <div class="experience__meta">
-              <span class="experience__role">Estagiário — Gestor de Projetos de TI e Técnico de Equipe</span>
-              <span class="experience__period">Julho 2024 – Julho 2025</span>
-            </div>
-            <div class="experience__header">
-              <h3 class="experience__title">FRC Colossus</h3>
-              <p class="experience__institution">SESI (Escola SESI Anexo)</p>
-            </div>
-            <p class="experience__desc">Estágio formal de um ano no SESI, atuando como gestor de projetos de TI e técnico da equipe Colossus, uma das equipes pioneiras de FRC no Maranhão. Responsável pela gestão de projetos e chefia de engenharia da equipe: mentoria e treinamento dos integrantes, gestão de projetos sociais, patrocínios e financeiro, além de atuação prática em maquinário, elétrica, modelagem, usinagem, montagem e testagem dos robôs. Em paralelo, monitoria técnica das equipes de FTC e FRC na Escola SESI Anexo, orientando documentação, modelagem e montagem de protótipos ao longo da temporada.</p>
-          </article>
-
-          <article class="experience__item" style="--d: .08s">
+            <figure class="experience__media experience__media--falcons">
+              <img src="img/falcons.png" alt="Iago agachado ao lado do robô da equipe FTC Falcons durante uma competição">
+            </figure>
             <div class="experience__meta">
               <span class="experience__role">Engenheiro-Chefe e Desenvolvedor</span>
               <span class="experience__period">2022 – 2023</span>
@@ -168,7 +159,34 @@
               <p class="experience__institution">Co-fundador</p>
             </div>
             <p class="experience__award"><span class="tag tag--go">Inspire Award — primeiro ano de competição</span></p>
-            <p class="experience__desc">Co-fundador da Falcons, primeira equipe de FTC do Maranhão, vencedora do Inspire Award já no primeiro ano de competição. Como Engenheiro-Chefe e Desenvolvedor, responsável pelo ciclo de vida completo do robô: concepção, design, modelagem, impressão 3D, montagem, programação e testagem. Atuou também como piloto em competição e liderou reuniões com patrocinadores, fornecedores e autoridades, além de contribuir diretamente nas apresentações aos juízes.</p>
+            <p class="experience__desc">Co-fundador da Falcons, primeira equipe de FTC do Maranhão, vencedora do Inspire Award já no primeiro ano de competição. Como Engenheiro-Chefe e Desenvolvedor, conduzi o ciclo completo do robô, da concepção à testagem, além de atuar como piloto e liderar reuniões com patrocinadores, fornecedores e autoridades.</p>
+          </article>
+
+          <article class="experience__item" style="--d: .08s">
+            <figure class="experience__media experience__media--colossus">
+              <img src="img/colossus.jpg" alt="Robô da equipe FRC Colossus com LEDs verdes acesos em uma oficina">
+            </figure>
+            <div class="experience__meta">
+              <span class="experience__role">Estagiário — Gestor de Projetos de TI e Técnico de Equipe</span>
+              <span class="experience__period">Julho 2024 – Julho 2025</span>
+            </div>
+            <div class="experience__header">
+              <h3 class="experience__title">FRC Colossus</h3>
+              <p class="experience__institution">SESI (Escola SESI Anexo)</p>
+            </div>
+            <p class="experience__desc">Estágio formal de um ano no SESI como gestor de projetos de TI e técnico da equipe Colossus, uma das pioneiras de FRC no Maranhão. Liderei projetos, chefia de engenharia, mentoria e treinamento, combinando gestão e atuação prática na construção e testagem dos robôs.</p>
+          </article>
+
+          <article class="experience__item" style="--d: .16s">
+            <div class="experience__meta">
+              <span class="experience__role">Product Owner</span>
+              <span class="experience__period">Dedicação integral ao programa</span>
+            </div>
+            <div class="experience__header">
+              <h3 class="experience__title">Jovem Tech</h3>
+              <p class="experience__institution">Grupo Mateus</p>
+            </div>
+            <p class="experience__desc">Product Owner de um time de 9 pessoas no Jovem Tech, com dedicação integral ao programa. Responsável pela gestão de escopo, infraestrutura de deploy e qualidade do trabalho do time.</p>
           </article>
         </div>
       </div>
@@ -194,29 +212,33 @@
                 <span class="card__ref">Em destaque</span>
               </p>
               <h3 class="card__title">PortMind — Pipeline de Dados</h3>
-              <p class="card__desc">Pipeline de dados para monitoramento de dutos do Porto do Itaqui. Simula sensores de pressão com EPANET/WNTR, gera telemetria contínua por API, detecta anomalias com base no histórico das leituras e transforma cada detecção em ocorrência e alerta, sempre com confirmação humana.</p>
-              <p class="card__desc"><strong>Contexto:</strong> Desenvolvimento do Digital Twin da rede de dutos, com base no modelo EPANET, mantendo a mesma estrutura de nós, tubulações e junções da adaptação paralela em FESTO/FluidSIM para evitar divergência entre os modelos.</p>
+              <p class="card__desc">Pipeline de dados para monitorar os dutos do Porto do Itaqui, simulando sensores de pressão com EPANET/WNTR e gerando telemetria por API. Detecta anomalias no histórico e as transforma em ocorrências e alertas com confirmação humana.</p>
+              <p class="card__desc"><strong>Contexto:</strong> Digital Twin baseado no modelo EPANET, alinhado à adaptação em FESTO/FluidSIM para manter os modelos consistentes.</p>
             </div>
 
             <div class="card__side">
               <ul class="tags" aria-label="Temas">
                 <li class="tag">Python</li>
                 <li class="tag">FastAPI</li>
+                <li class="tag">EPANET/WNTR</li>
                 <li class="tag">Telemetria</li>
                 <li class="tag">Detecção de anomalias</li>
               </ul>
-              <p class="card__status"><span class="tag tag--go">Em destaque</span></p>
+              <p class="card__status"><span class="tag tag--go">Em destaque</span> <span class="tag tag--go">Finalista Inova Itaqui</span></p>
             </div>
           </article>
 
           <article class="card reveal" style="--d: .08s">
+            <figure class="card__media">
+              <img src="img/portmind.png" alt="Tela de gráficos do painel PortMind AI com ocorrências detectadas e resolvidas">
+            </figure>
             <p class="card__top">
               <span class="card__num">02</span>
               <span class="card__ref">Projeto complementar</span>
             </p>
             <h3 class="card__title">PortMind — Painel de Controle</h3>
-            <p class="card__desc">Interface web do mesmo projeto: dashboard, mapa, incidentes, alertas e auditoria para o centro de comando operacional. Frontend em React e TypeScript, com backend em Fastify e Prisma em evolução.</p>
-            <p class="card__desc"><strong>Contexto:</strong> Atuação na arquitetura e nas decisões de projeto do painel, da definição do fluxo de dados até a visualização.</p>
+            <p class="card__desc">Painel web do PortMind para o centro de comando operacional, reunindo dashboard, mapa, incidentes, alertas e auditoria. Frontend em React e TypeScript, com backend em Fastify e Prisma em evolução.</p>
+            <p class="card__desc"><strong>Contexto:</strong> Atuação na arquitetura e nas decisões de projeto, do fluxo de dados à visualização.</p>
             <ul class="tags" aria-label="Temas">
               <li class="tag">React</li>
               <li class="tag">TypeScript</li>
@@ -224,6 +246,32 @@
               <li class="tag">Prisma</li>
             </ul>
             <p class="card__status"><a class="btn btn--paper" href="https://portmind-ai.vercel.app/" target="_blank" rel="noopener">VER PROJETO →</a></p>
+          </article>
+
+          <article class="card card--ongoing reveal" style="--d: .16s">
+            <p class="card__top">
+              <span class="card__num">03</span>
+              <span class="card__ref">Projeto em andamento</span>
+            </p>
+            <h3 class="card__title">Portal do Fornecedor Itaqui</h3>
+            <p class="card__desc">Plataforma de cadastro de fornecedores locais para o TEGRAM (Porto do Itaqui), com validação de CNPJ, redirecionamento para o curso de regularização em caso de irregularidade documental e painel de gestão para Inventário/Suprimentos.</p>
+            <p class="card__desc"><strong>Contexto:</strong> Projeto do Jovem Tech, com Iago como Product Owner de um time de 9 pessoas, responsável por escopo, infraestrutura de deploy e qualidade.</p>
+            <ul class="tags" aria-label="Temas">
+              <li class="tag">React</li>
+              <li class="tag">Node.js/Express</li>
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">Prisma</li>
+            </ul>
+          </article>
+
+          <article class="card card--concept reveal" style="--d: .24s">
+            <p class="card__top">
+              <span class="card__num">04</span>
+              <span class="card__ref">Em concepção</span>
+            </p>
+            <h3 class="card__title">Impulso</h3>
+            <p class="card__desc">Analisador de currículo, indexador de vagas e simulador de entrevista, conceituado durante uma dinâmica do Jovem Tech. É um conceito em estágio inicial, sem código ou produto pronto ainda.</p>
+            <p class="card__status"><span class="tag tag--concept">Em concepção</span></p>
           </article>
 
         </div>
